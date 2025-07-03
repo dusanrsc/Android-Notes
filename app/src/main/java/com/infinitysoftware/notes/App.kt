@@ -34,7 +34,7 @@ fun App() {
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
-            Spacer(modifier = Modifier.height(lineSpacingDp.dp)) // pomera prvu liniju nadole
+            Spacer(modifier = Modifier.height(lineSpacingDp.dp))
 
             for (i in 0..numberOfLines) {
                 Divider(
