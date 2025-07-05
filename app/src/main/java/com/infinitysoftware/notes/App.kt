@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.sp
 import com.infinitysoftware.notes.ui.theme.DefaultBackgroundColor
 import com.infinitysoftware.notes.ui.theme.DefaultFontColor
 import com.infinitysoftware.notes.ui.theme.DefaultLineColor
-import java.io.OutputStreamWriter
 
 // Composable Application Function.
 @Composable
@@ -43,7 +42,7 @@ fun App() {
             .padding(horizontal = 16.dp, vertical = 24.dp)
     ) {
         // USING THIS LOC ONLY IN DEVELOPMENT STAGE.
-        // Text(text = "${numberOfLines}", color = Color.Green)
+        Text(text = "${numberOfLines}", color = Color.Green)
 
         Column(
             modifier = Modifier.fillMaxSize()
@@ -62,9 +61,12 @@ fun App() {
                 Spacer(modifier = Modifier.height(lineSpacing.dp))
             }
         }
-        TextField(
+
+        // Transparent Text Input Field.
+        TextField(modifier = Modifier.fillMaxSize(),
             value = enteredText,
             onValueChange = { enteredText = it},
+
             textStyle = TextStyle(
                 fontSize = defaultFontSize.sp,
                 fontFamily = FontFamily.Default,
